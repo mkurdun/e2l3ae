@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+python train.py \
+  --seed 42 \
+  --scheduler None \
+  --lr 5e-4 \
+  --epochs 74 \
+  --dataset office \
+  --devices "[0,1,2,3,4,5,6,7]" \
+  --validation false \
+  --max_seq_length 384 \
+  --max_output 10000 \
+  --batch_size 1024 \
+  --sbert_batch_size 1024 \
+  --evaluate true \
+  --evaluate_epoch false \
+  --save_every_epoch false \
+  --model_name my_model \
+  --sbert "all-mpnet-base-v2" \
+  --l3ae_w_nmse 250.0 \
+  --l3ae_w_align 1.0 \
+  --lambda_s 10.0 \
+  --lambda_b 700.0 \
+  --lambda_r 1.0 \
+  --l3ae_update_every 290 \
+  --l3ae_cache_update_every 145 \
+  --eval_every_n_steps 290 \
+  --save_every_n_steps 290 \
+  --l3ae_residual_sum_gamma_s 1.0
